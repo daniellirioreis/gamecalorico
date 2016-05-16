@@ -1,0 +1,443 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<style>
+#div1 {width:100px;height:100px;padding:10px;border:4px solid #aaaaaa; background: white}
+
+#div2 {width:100px;height:100px;padding:10px;border:4px solid #aaaaaa;
+	     background:white}
+
+#div3 {width:100px;height:100px;padding:10px;border:4px solid #aaaaaa;
+	     background: white}
+
+#div4 {width:100px;height:100px;padding:10px;border:4px solid #aaaaaa;
+	     background: white}
+
+#div5 {width:100px;height:100px;padding:10px;border:4px solid #aaaaaa;
+background: white}
+
+#div6 {width:100px;height:100px;padding:10px;border:4px solid #aaaaaa;
+background: white}
+
+#div7 {width:100px;height:100px;padding:10px;border:4px solid #aaaaaa;
+background: white}
+
+#div8 {width:100px;height:100px;padding:10px;border:4px solid #aaaaaa;
+background: white}
+
+#div9 {width:100px;height:100px;padding:10px;border:4px solid #aaaaaa;
+background: white }
+
+#div10 {width:100px;height:100px;padding:10px;border:4px solid #aaaaaa;
+background: white }
+
+#div11 {width:100px;height:100px;padding:10px;border:4px solid #aaaaaa;
+background: white }
+
+#div12 {width:100px;height:100px;padding:10px;border:4px solid #aaaaaa;
+background: white }
+
+#div_comida {width:500px;height:500px;padding:10px;border:4px solid #aaaaaa;
+background: white }
+
+.error {color: red;}
+.success {color: green;}
+
+.btn {
+	width:500px;
+	height:500px;
+	padding:10px;
+	border:3px 
+	solid #aaaaaa; 
+	background: lightyellow;
+	text-decoration:none; 
+}
+
+.placa{
+	background:lightyellow;
+	border:3px 
+	solid #aaaaaa; 
+
+}
+
+</style>
+<script language="javascript">  
+
+soma_caloria = 0.0 ;
+contador_alimento = 0;
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+
+    var data = ev.dataTransfer.getData("text");
+
+    ev.target.appendChild(document.getElementById(data));
+
+    var x = Math.floor(ev.target.appendChild(document.getElementById(data)).alt);
+
+    var div = document.getElementById("soma_caloria");         
+    
+    var div_musica = document.getElementById("musica");    
+
+    var tab_coca = document.getElementById("tab_coca");    
+    var tab_sundae = document.getElementById("tab_sundae");    
+    var p_pao = document.getElementById("p_pao");    
+    var p_cafe = document.getElementById("p_cafe");    
+    var p_suco = document.getElementById("p_suco");    
+	var p_cerveja = document.getElementById("p_cerveja");    
+	var p_fast_food = document.getElementById("p_fast_food");    
+	var p_comida_chinesa = document.getElementById("p_comida_chinesa");    
+	var p_cupcake = document.getElementById("p_cupcake");    
+	var p_queijo = document.getElementById("p_queijo");    
+	var p_omelet = document.getElementById("p_omelet");    
+	var p_pizza = document.getElementById("p_pizza");    
+	var p_misto = document.getElementById("p_misto");    
+	var p_cenoura = document.getElementById("p_cenoura");    
+	var p_leite = document.getElementById("p_leite");   
+	var p_uva = document.getElementById("p_uva");   
+	var p_milk = document.getElementById("p_milk");   
+	var p_maca = document.getElementById("p_maca");   
+	var p_camarao = document.getElementById("p_camarao");   
+
+
+
+     ev.target.appendChild(document.getElementById(data)).draggable = false	
+     div_musica.innerHTML = "<embed src='moeda.mp3' hidden='true' loop='infinite' autostart='TRUE'>"
+
+
+    if (ev.target.appendChild(document.getElementById(data)).id == "coca"){
+     	tab_coca.hidden = false;	
+    }
+	
+	if (ev.target.appendChild(document.getElementById(data)).id == "sundae"){
+	   tab_sundae.hidden = false;	
+	}
+	
+	if (ev.target.appendChild(document.getElementById(data)).id == "pao"){
+	   p_pao.hidden = false;	
+	}
+	if (ev.target.appendChild(document.getElementById(data)).id == "cafe"){
+	   p_cafe.hidden = false;	
+	}
+	if (ev.target.appendChild(document.getElementById(data)).id == "suco"){
+	   p_suco.hidden = false;	
+	}
+	if (ev.target.appendChild(document.getElementById(data)).id == "cerveja"){
+	   p_cerveja.hidden = false;	
+	}
+	if (ev.target.appendChild(document.getElementById(data)).id == "fast_food"){
+	   p_fast_food.hidden = false;	
+	}
+	if (ev.target.appendChild(document.getElementById(data)).id == "comida_chinesa"){
+	   p_comida_chinesa.hidden = false;	
+	}
+	if (ev.target.appendChild(document.getElementById(data)).id == "cupcake"){
+	   p_cupcake.hidden = false;	
+	}
+	if (ev.target.appendChild(document.getElementById(data)).id == "queijo"){
+	   p_queijo.hidden = false;	
+	}
+	if (ev.target.appendChild(document.getElementById(data)).id == "omelet"){
+	   p_omelet.hidden = false;	
+	}	
+	if (ev.target.appendChild(document.getElementById(data)).id == "pizza"){
+	   p_pizza.hidden = false;	
+	}	
+	if (ev.target.appendChild(document.getElementById(data)).id == "misto"){
+	   p_misto.hidden = false;	
+	}	
+	if (ev.target.appendChild(document.getElementById(data)).id == "cenoura"){
+	   p_cenoura.hidden = false;	
+	}	
+	if (ev.target.appendChild(document.getElementById(data)).id == "leite"){
+	   p_leite.hidden = false;	
+	}	
+	if (ev.target.appendChild(document.getElementById(data)).id == "uva"){
+	   p_uva.hidden = false;	
+	}	
+	if (ev.target.appendChild(document.getElementById(data)).id == "milk"){
+	   p_milk.hidden = false;	
+	}	
+	if (ev.target.appendChild(document.getElementById(data)).id == "camarao"){
+	   p_camarao.hidden = false;	
+	}	
+	if (ev.target.appendChild(document.getElementById(data)).id == "maca"){
+	   p_maca.hidden = false;	
+	}	
+
+    soma_caloria = soma_caloria + x;
+    contador_alimento = contador_alimento + 1;
+
+    if( soma_caloria < 3000 && contador_alimento == 12) {
+    	var refeicoes = document.getElementById("refeicoes");         
+		refeicoes.hidden = true;
+
+		var trofeu = document.getElementById("trofeu");         
+		trofeu.hidden = false;
+		var winner = document.getElementById("winner");         
+		winner.hidden = false;
+		div_musica.innerHTML = "<embed src='flawless_victory.mp3' hidden='true' loop='infinite' autostart='TRUE'>"
+
+    } 
+
+     if( soma_caloria > 3000){
+    	
+    	var gordo1 = document.getElementById("gordo1");         
+		gordo1.hidden = false;
+
+		var normal = document.getElementById("normal");         
+		normal.hidden = true;
+
+		var gordo = document.getElementById("gordo");
+		gordo.hidden = true;
+
+
+		var refeicoes = document.getElementById("refeicoes");         
+		refeicoes.hidden = true;
+
+		var boom = document.getElementById("boom");         
+		boom.hidden = false;
+	
+		div_musica.innerHTML = "<embed src='exp.mp3' hidden='true' loop='infinite' autostart='TRUE'>"
+
+		var game_over = document.getElementById("game_over");         
+		game_over.hidden = false;
+
+		div.innerHTML = "<h1 class='error'>" + soma_caloria +"</h1>";
+
+     }else{
+     	if (soma_caloria > 2000) {
+
+        var gordo1 = document.getElementById("gordo1");         
+		gordo1.hidden = true;
+		
+		var normal = document.getElementById("normal");
+		normal.hidden = true;
+      
+		var gordo = document.getElementById("gordo");
+		gordo.hidden = false;
+		div_musica.innerHTML = "<embed src='estou_ficando_gorda.m4a' hidden='true' loop='infinite' autostart='TRUE'>"
+
+
+     	} else {
+        
+        var gordo1 = document.getElementById("gordo1");         
+		gordo1.hidden = true;
+		
+		var normal = document.getElementById("normal");         
+		normal.hidden = false;
+		
+		var gordo = document.getElementById("gordo");
+		gordo.hidden = true;
+
+
+     	}
+
+		div.innerHTML = "<h1 class='success'>" + soma_caloria +"</h1>";
+     }	
+}
+</script>
+</head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td width="20%">
+			<br><br><br><br>
+
+			<div id="div_comida">
+				<img id="coca" src="coca.png" draggable="true" ondragstart="drag(event)" width="120" alt = "137" title="Coca Cola">
+				<img id="sundae" src="Sundae.png" draggable="true" ondragstart="drag(event)" width="80" alt = "616" title="Sundae">
+				<img id="pao" src="pao.png" draggable="true" ondragstart="drag(event)" width="80"alt = "135" title="Pão">
+				<img id="cafe" src="cafe.png" draggable="true" ondragstart="drag(event)" width="80" alt="33" title="Café">
+				<img id="suco" src="suco.png" draggable="true" ondragstart="drag(event)" width="80" alt="109" title="Suco">
+				<img id="cerveja" src="cerveja.png" draggable="true" ondragstart="drag(event)" width="80" alt="147" title="Cerveja">
+				<img id="fast_food" src="fast_food.png" draggable="true" ondragstart="drag(event)" width="80" alt="982" title="Fast Food">
+				<img id="comida_chinesa" src="comida_chinesa.png" draggable="true" ondragstart="drag(event)" width="80" alt="254" title="Comida Chinesa">
+				<img id="cupcake" src="cupcake.png" draggable="true" ondragstart="drag(event)" width="60" alt="164" title="Cupcake">
+				<img id="queijo" src="queijo.png" draggable="true" ondragstart="drag(event)" width="80" alt="112" title="Queijo">
+				<img id="omelet" src="omelet.png" draggable="true" ondragstart="drag(event)" width="80" alt="170" title="Omelete">
+				<img id="pizza" src="fatia_pizza.png" draggable="true" ondragstart="drag(event)" width="80" alt="412" title="Fatia de pizza">
+				<img id="misto" src="misto-quente.png" draggable="true" ondragstart="drag(event)" width="100" alt="283" title="Misto Quente">
+				<img id="cenoura" src="cenoura.png" draggable="true" ondragstart="drag(event)" width="80" alt="45" title="Cenoura">
+				<img id="leite" src="leite.png" draggable="true" ondragstart="drag(event)" width="70" alt="150" title="leite">
+				<img id="uva" src="uva.png" draggable="true" ondragstart="drag(event)" width="70" alt="130" title="Cacho de Uva">
+				<img id="maca" src="maca.png" draggable="true" ondragstart="drag(event)" width="70" alt="85" title="Maça">
+				<img id="milk" src="milk-shake-chocolate.png" draggable="true" ondragstart="drag(event)" width="150" alt="380" title="leite">
+				<img id="camarao" src="camarao.png" draggable="true" ondragstart="drag(event)" width="80" alt="310" title="Camarão">
+			</div>
+		</td>
+		<td  align="center" width="30%">
+			<h1 align="center">Refeições</h1>
+			
+			<img id="boom" src="boom.jpg" width="500" hidden="true">
+			
+			<p id="game_over" align="center" hidden="true"> 
+				<font size="30" color="red">Você perdeu!! </font>
+			</p>
+
+			<img id="trofeu" src="trofeu.jpeg" width="300" hidden="true">
+
+			<p id="winner" align="center" hidden="true"> 
+				<font size="30" color="green">Parabéns vc Conseguiu!! </font>
+			</p>
+
+			
+			<table id="refeicoes">
+				<tr>
+					<td>
+						Café da manhã
+						<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+					</td>
+					<td>
+						<br>
+						<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+					</td>
+					<td>
+						<br>
+						<div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						Almoço
+						<div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+					</td>
+					<td>
+						<br>
+						<div id="div5" ondrop="drop(event)" ondragover="allowDrop(event)"></div>		
+					</td>
+					<td>
+						<br>
+					    <div id="div6" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Café da tarde
+						<div id="div7" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+					</td>
+					<td>
+						<br>
+						<div id="div8" ondrop="drop(event)" ondragover="allowDrop(event)"></div>		
+					</td>
+					<td>
+						<br>
+					    <div id="div9" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						jantar
+						<div id="div10" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+					</td>
+					<td>
+						<br>
+						<div id="div11" ondrop="drop(event)" ondragover="allowDrop(event)"></div>		
+					</td>
+					<td>
+						<br>
+					    <div id="div12" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+					</td>
+				</tr>
+			</table>
+		</td>	
+		<td width="20%">
+			<img id="normal" src="normal.jpg" width="500">
+			<img id="normal1" src="normal1.jpg" hidden="true">
+			<img id="gordo" src="gordo1.jpg" hidden="true">
+			<img id="gordo1" src="gordo2.jpg" hidden="true">
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<a href="ana.html" class="btn">Recomeçar</a>
+			<br><br><br>
+		</td>
+	</tr>
+</table>
+
+<table>
+	<tr>
+		<td class="placa">
+			<h1>Soma do Valor Calorico:</h1>
+			
+		</td>
+		<td  class="placa">
+			<div id="soma_caloria">	<h1>0</h1></div>
+		</td>
+		<td>
+			<div id="musica">				
+			</div>
+		</td>
+	</tr>
+</table>
+<p id="tab_coca" hidden="true">
+	<img src="coca.png" draggable="true" width="50">137 calorias
+</p>
+<p id="tab_sundae" hidden="true">
+	<img src="sundae.png" draggable="true" width="50">616 calorias
+</p>
+<p id="p_pao" hidden="true">
+	<img src="pao.png" width="50"> 135 calorias
+</p>
+<p id="p_cafe"  hidden="true">
+	<img src="cafe.png" width="50"> 33 calórias
+</p>	
+<p id="p_suco" hidden="true">
+	<img src="suco.png" width="50"> 109 calorias
+</p>
+<p id="p_cerveja" hidden="true">
+	<img src="cerveja.png"  width="50"> 147 calorias
+</p>
+<p id="p_fast_food" hidden="true" >
+	<img src="fast_food.png" width="50">982 calorias
+</p>
+<p id="p_comida_chinesa" hidden="50">
+	<img src="comida_chinesa.png" draggable="true" width="50"> 254 calorias
+</p>
+<p id="p_cupcake" hidden="true" >
+	<img src="cupcake.png" width="30"> 164 calorias
+</p>
+<p id="p_queijo" hidden="true">
+	<img src="queijo.png" width="40"> 112 calorias
+</p>
+<p id="p_omelet" hidden="true">
+	<img src="omelet.png" width="40"> 170 calorias
+</p>
+<p id="p_pizza" hidden="true" >
+	<img src="fatia_pizza.png" width="50" > 412 calorias
+</p>
+<p id="p_misto" hidden="true">
+	<img src="misto-quente.png" width="50"> 283 calorias
+</p>
+<p id="p_cenoura"  hidden="true">
+	<img src="cenoura.png" width="40"> 45 Calorias
+</p>
+<p id="p_leite" hidden="true">
+	<img  src="leite.png" width="35"> 150 calorias
+</p>
+<p id="p_uva" hidden="true">
+	<img src="uva.png" width="35" alt="130"> 130 calorias
+</p>
+<p id="p_maca"  hidden="true">
+	<img src="maca.png" width="35" alt="85"> 85 calorias
+</p>
+<p id="p_milk"  hidden="true">
+	<img id="milk" src="milk-shake-chocolate.png" width="75" > 380 calorias
+</p>
+<p id="p_camarao"  hidden="true">
+	<img src="camarao.png" width="40"> 310 calorias
+</p>
+
+</body>
+</html>

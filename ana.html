@@ -1,0 +1,527 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<style>
+#div1 {width:100px;height:100px;padding:10px;border:4px solid #aaaaaa; background: white}
+
+#div2 {width:100px;height:100px;padding:10px;border:4px solid #aaaaaa;
+	     background:white}
+
+#div3 {width:100px;height:100px;padding:10px;border:4px solid #aaaaaa;
+	     background: white}
+
+#div4 {width:100px;height:100px;padding:10px;border:4px solid #aaaaaa;
+	     background: white}
+
+#div5 {width:100px;height:100px;padding:10px;border:4px solid #aaaaaa;
+background: white}
+
+#div6 {width:100px;height:100px;padding:10px;border:4px solid #aaaaaa;
+background: white}
+
+#div7 {width:100px;height:100px;padding:10px;border:4px solid #aaaaaa;
+background: white}
+
+#div8 {width:100px;height:100px;padding:10px;border:4px solid #aaaaaa;
+background: white}
+
+#div9 {width:100px;height:100px;padding:10px;border:4px solid #aaaaaa;
+background: white }
+
+#div10 {width:100px;height:100px;padding:10px;border:4px solid #aaaaaa;
+background: white }
+
+#div11 {width:100px;height:100px;padding:10px;border:4px solid #aaaaaa;
+background: white }
+
+#div12 {width:100px;height:100px;padding:10px;border:4px solid #aaaaaa;
+background: white }
+
+#div_comida {width:500px;height:500px;padding:10px;border:4px solid #aaaaaa;
+background: white }
+
+.error {color: red;}
+.success {color: green;}
+
+.btn {
+	background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.desativado{
+	background-color: silver;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.placa{
+	background:lightyellow;
+	border:3px 
+	solid #aaaaaa; 
+
+}
+input[type=text] {
+    width: 10%;
+    padding: 10px 5px;
+    margin: 8px 0;
+    box-sizing: border-box;
+
+}
+
+</style>
+<script language="javascript">  
+
+soma_caloria = 0.0 ;
+var calorias = 0 ;
+contador_alimento = 0;
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+
+    var data = ev.dataTransfer.getData("text");
+
+    ev.target.appendChild(document.getElementById(data));
+
+    var x = Math.floor(ev.target.appendChild(document.getElementById(data)).alt);
+
+    var div = document.getElementById("soma_caloria");         
+    
+    var div_musica = document.getElementById("musica");    
+
+    var tab_coca = document.getElementById("tab_coca");    
+    var tab_sundae = document.getElementById("tab_sundae");    
+    var p_pao = document.getElementById("p_pao");    
+    var p_cafe = document.getElementById("p_cafe");    
+    var p_suco = document.getElementById("p_suco");    
+	var p_cerveja = document.getElementById("p_cerveja");    
+	var p_fast_food = document.getElementById("p_fast_food");    
+	var p_comida_chinesa = document.getElementById("p_comida_chinesa");    
+	var p_cupcake = document.getElementById("p_cupcake");    
+	var p_queijo = document.getElementById("p_queijo");    
+	var p_omelet = document.getElementById("p_omelet");    
+	var p_pizza = document.getElementById("p_pizza");    
+	var p_misto = document.getElementById("p_misto");    
+	var p_cenoura = document.getElementById("p_cenoura");    
+	var p_leite = document.getElementById("p_leite");   
+	var p_uva = document.getElementById("p_uva");   
+	var p_milk = document.getElementById("p_milk");   
+	var p_maca = document.getElementById("p_maca");   
+	var p_camarao = document.getElementById("p_camarao");   
+
+
+
+     ev.target.appendChild(document.getElementById(data)).draggable = false	
+     div_musica.innerHTML = "<embed src='moeda.mp3' hidden='true' loop='infinite' autostart='TRUE'>"
+
+
+    if (ev.target.appendChild(document.getElementById(data)).id == "coca"){
+     	tab_coca.hidden = false;	
+    }
+	
+	if (ev.target.appendChild(document.getElementById(data)).id == "sundae"){
+	   tab_sundae.hidden = false;	
+	}
+	
+	if (ev.target.appendChild(document.getElementById(data)).id == "pao"){
+	   p_pao.hidden = false;	
+	}
+	if (ev.target.appendChild(document.getElementById(data)).id == "cafe"){
+	   p_cafe.hidden = false;	
+	}
+	if (ev.target.appendChild(document.getElementById(data)).id == "suco"){
+	   p_suco.hidden = false;	
+	}
+	if (ev.target.appendChild(document.getElementById(data)).id == "cerveja"){
+	   p_cerveja.hidden = false;	
+	}
+	if (ev.target.appendChild(document.getElementById(data)).id == "fast_food"){
+	   p_fast_food.hidden = false;	
+	}
+	if (ev.target.appendChild(document.getElementById(data)).id == "comida_chinesa"){
+	   p_comida_chinesa.hidden = false;	
+	}
+	if (ev.target.appendChild(document.getElementById(data)).id == "cupcake"){
+	   p_cupcake.hidden = false;	
+	}
+	if (ev.target.appendChild(document.getElementById(data)).id == "queijo"){
+	   p_queijo.hidden = false;	
+	}
+	if (ev.target.appendChild(document.getElementById(data)).id == "omelet"){
+	   p_omelet.hidden = false;	
+	}	
+	if (ev.target.appendChild(document.getElementById(data)).id == "pizza"){
+	   p_pizza.hidden = false;	
+	}	
+	if (ev.target.appendChild(document.getElementById(data)).id == "misto"){
+	   p_misto.hidden = false;	
+	}	
+	if (ev.target.appendChild(document.getElementById(data)).id == "cenoura"){
+	   p_cenoura.hidden = false;	
+	}	
+	if (ev.target.appendChild(document.getElementById(data)).id == "leite"){
+	   p_leite.hidden = false;	
+	}	
+	if (ev.target.appendChild(document.getElementById(data)).id == "uva"){
+	   p_uva.hidden = false;	
+	}	
+	if (ev.target.appendChild(document.getElementById(data)).id == "milk"){
+	   p_milk.hidden = false;	
+	}	
+	if (ev.target.appendChild(document.getElementById(data)).id == "camarao"){
+	   p_camarao.hidden = false;	
+	}	
+	if (ev.target.appendChild(document.getElementById(data)).id == "maca"){
+	   p_maca.hidden = false;	
+	}	
+
+    soma_caloria = soma_caloria + x;
+    contador_alimento = contador_alimento + 1;
+
+    if( soma_caloria < calorias && contador_alimento == 12) {
+    	var refeicoes = document.getElementById("refeicoes");         
+		refeicoes.hidden = true;
+
+		var trofeu = document.getElementById("trofeu");         
+		trofeu.hidden = false;
+		var winner = document.getElementById("winner");         
+		winner.hidden = false;
+		div_musica.innerHTML = "<embed src='flawless_victory.mp3' hidden='true' loop='infinite' autostart='TRUE'>"
+
+    } 
+    
+     if( soma_caloria > calorias){
+		var refeicoes = document.getElementById("refeicoes");         
+		refeicoes.hidden = true;
+
+		var boom = document.getElementById("boom");         
+		boom.hidden = false;
+	
+		div_musica.innerHTML = "<embed src='exp.mp3' hidden='true' loop='infinite' autostart='TRUE'>"
+
+		var game_over = document.getElementById("game_over");         
+		game_over.hidden = false;
+
+		div.innerHTML = "<h1 class='error'>" + soma_caloria +"</h1>";
+
+     }else{
+     	if (soma_caloria > calorias) {
+
+		div_musica.innerHTML = "<embed src='moeda.mp3' hidden='true' loop='infinite' autostart='TRUE'>"
+
+
+     	} else {
+
+		div_musica.innerHTML = "<embed src='moeda.mp3' hidden='true' loop='infinite' autostart='TRUE'>"
+
+
+     	}
+
+		div.innerHTML = "<h1 class='success'>" + soma_caloria +"</h1>";
+     }	
+}
+
+function comecar() {
+	var altura = document.getElementById("input_altura");         
+	var peso = document.getElementById("input_peso");  
+	var sexo = document.getElementById("select_sexo");  
+	var atividade = document.getElementById("select_atividade");
+	var idade = document.getElementById("input_idade");
+	var game = document.getElementById("game");
+	var comecar = document.getElementById("comecar")
+	
+
+	if (altura.value != "" && peso.value != "" && idade.value != ""){
+		altura.disabled = true;
+		peso.disabled = true;    
+		sexo.disabled = true;
+		atividade.disabled = true;
+		game.hidden = false;
+		//taxa de metabolismo basal(TMB)
+		//com esta taxa encontrará o valor de calorias que deve consumir se passar todo o dia sedentário. Para calcularmos esta taxa usaremos a seguinte fórmula: TMB = 10(peso) + 6,25(altura) - 5(idade) + sexo
+		if(sexo.value == "F"){
+			tmb = (10 * peso.value) + (6.25 * altura.value) - (5 * idade.value) - altura.value;
+		}else{
+			tmb = (10 * peso.value) + (6.25 * altura.value) - (5 * idade.value) - 5;
+		}		
+		switch(atividade.value) {
+		    case "1":
+		        tmb = tmb * 1.375;
+		        break;
+		    case "2":
+		        tmb = tmb *  1.55;
+		        break;
+		    case "3":
+		       	tmb = tmb * 1.725;
+		       	break;
+		    case "4":
+		    	tmb = tmb * 1.9;
+		    	break;
+		}
+
+		calorias = tmb;
+		comecar.disabled = true
+		comecar.className='desativado'
+		var div_caloria = document.getElementById("calorias");         
+
+		div_caloria.innerHTML = "<h4 class='error'>" + calorias +"</h4>";
+
+
+	}else{
+		alert("Todos os campos deve ser preechido!");
+	}
+
+}
+</script>
+</head>
+<body>
+<div class="placa">
+<p>&nbsp;&nbsp;<b>Informe os dados para começar o game:</b></p>
+<table width="100%">
+	<tr>
+		<td width="40%">
+			&nbsp;&nbsp;Peso<br>
+			&nbsp;&nbsp;<input type="text" name="peso" id="input_peso"><br>
+
+		</td>
+		<td>
+			Altura<br>
+			<input type="text" name="altura" id="input_altura"><br>	
+		</td>
+		<td>
+			Idade<br>
+			<input type="text" name="idade" id="input_idade"><br>
+		</td>
+	</tr>
+	<tr>
+		<td width="20%">
+			&nbsp;&nbsp;Sexo<br>
+			<select id="select_sexo">
+		  		<option value="F">Feminino </option>
+		  		<option value="M">Masculino</option>
+			</select>
+
+		</td>
+		<td>
+			Atividade física<br>
+			<select id="select_atividade">
+		  		<option value="1">exercicios leves 1 - 3 vezes por semana </option>
+		  		<option value="2">exercicios moderados 3 - 5 vezes por semana</option>
+		  		<option value="3">se exercita bastante durante toda a semana</option>
+			  	<option value="4">treina pesado e super ativo no dia a dia</option>
+			</select>
+		</td>
+		<td>
+			Calorias por dia:
+			<div id="calorias">
+			</div>
+		</td>
+	</tr>
+</table>
+<br>
+</div>
+<br><br>
+<a href="ana.html" class="btn">Recomeçar</a>
+<input type="button" name="botao-ok" value="Começar" class="btn" onclick="comecar()" id="comecar">
+
+<div id="game" hidden="true">
+
+	<table width="100%">
+		<tr>
+			<td width="20%">
+				<br><br><br><br>
+
+				<div id="div_comida">
+					<img id="coca" src="coca.png" draggable="true" ondragstart="drag(event)" width="120" alt = "137" title="Coca Cola">
+					<img id="sundae" src="Sundae.png" draggable="true" ondragstart="drag(event)" width="80" alt = "616" title="Sundae">
+					<img id="pao" src="pao.png" draggable="true" ondragstart="drag(event)" width="80"alt = "135" title="Pão">
+					<img id="cafe" src="cafe.png" draggable="true" ondragstart="drag(event)" width="80" alt="33" title="Café">
+					<img id="suco" src="suco.png" draggable="true" ondragstart="drag(event)" width="80" alt="109" title="Suco">
+					<img id="cerveja" src="cerveja.png" draggable="true" ondragstart="drag(event)" width="80" alt="147" title="Cerveja">
+					<img id="fast_food" src="fast_food.png" draggable="true" ondragstart="drag(event)" width="80" alt="982" title="Fast Food">
+					<img id="comida_chinesa" src="comida_chinesa.png" draggable="true" ondragstart="drag(event)" width="80" alt="254" title="Comida Chinesa">
+					<img id="cupcake" src="cupcake.png" draggable="true" ondragstart="drag(event)" width="60" alt="164" title="Cupcake">
+					<img id="queijo" src="queijo.png" draggable="true" ondragstart="drag(event)" width="80" alt="112" title="Queijo">
+					<img id="omelet" src="omelet.png" draggable="true" ondragstart="drag(event)" width="80" alt="170" title="Omelete">
+					<img id="pizza" src="fatia_pizza.png" draggable="true" ondragstart="drag(event)" width="80" alt="412" title="Fatia de pizza">
+					<img id="misto" src="misto-quente.png" draggable="true" ondragstart="drag(event)" width="100" alt="283" title="Misto Quente">
+					<img id="cenoura" src="cenoura.png" draggable="true" ondragstart="drag(event)" width="80" alt="45" title="Cenoura">
+					<img id="leite" src="leite.png" draggable="true" ondragstart="drag(event)" width="70" alt="150" title="leite">
+					<img id="uva" src="uva.png" draggable="true" ondragstart="drag(event)" width="70" alt="130" title="Cacho de Uva">
+					<img id="maca" src="maca.png" draggable="true" ondragstart="drag(event)" width="70" alt="85" title="Maça">
+					<img id="milk" src="milk-shake-chocolate.png" draggable="true" ondragstart="drag(event)" width="150" alt="380" title="leite">
+					<img id="camarao" src="camarao.png" draggable="true" ondragstart="drag(event)" width="80" alt="310" title="Camarão">
+				</div>
+			</td>
+			<td  align="center" width="30%">
+				<h1 align="center">Refeições</h1>
+				
+				<img id="boom" src="boom.jpg" width="500" hidden="true">
+				
+				<p id="game_over" align="center" hidden="true"> 
+					<font size="30" color="red">Você perdeu!! </font>
+				</p>
+
+				<img id="trofeu" src="trofeu.jpeg" width="300" hidden="true">
+
+				<p id="winner" align="center" hidden="true"> 
+					<font size="30" color="green">Parabéns vc Conseguiu!! </font>
+				</p>
+
+				
+				<table id="refeicoes">
+					<tr>
+						<td>
+							Café da manhã
+							<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+						</td>
+						<td>
+							<br>
+							<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+						</td>
+						<td>
+							<br>
+							<div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							Almoço
+							<div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+						</td>
+						<td>
+							<br>
+							<div id="div5" ondrop="drop(event)" ondragover="allowDrop(event)"></div>		
+						</td>
+						<td>
+							<br>
+						    <div id="div6" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Café da tarde
+							<div id="div7" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+						</td>
+						<td>
+							<br>
+							<div id="div8" ondrop="drop(event)" ondragover="allowDrop(event)"></div>		
+						</td>
+						<td>
+							<br>
+						    <div id="div9" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							jantar
+							<div id="div10" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+						</td>
+						<td>
+							<br>
+							<div id="div11" ondrop="drop(event)" ondragover="allowDrop(event)"></div>		
+						</td>
+						<td>
+							<br>
+						    <div id="div12" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+						</td>
+					</tr>
+				</table>
+			</td>	
+			<td width="20%">
+				<table>
+					<tr>
+						<td class="placa">
+							<h1>Soma do Valor Calorico:</h1>
+							
+						</td>
+						<td  class="placa">
+							<div id="soma_caloria">	<h1>0</h1></div>
+						</td>
+						<td>
+							<div id="musica">				
+							</div>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	<p id="tab_coca" hidden="true">
+		<img src="coca.png" draggable="true" width="50">137 calorias
+	</p>
+	<p id="tab_sundae" hidden="true">
+		<img src="sundae.png" draggable="true" width="50">616 calorias
+	</p>
+	<p id="p_pao" hidden="true">
+		<img src="pao.png" width="50"> 135 calorias
+	</p>
+	<p id="p_cafe"  hidden="true">
+		<img src="cafe.png" width="50"> 33 calórias
+	</p>	
+	<p id="p_suco" hidden="true">
+		<img src="suco.png" width="50"> 109 calorias
+	</p>
+	<p id="p_cerveja" hidden="true">
+		<img src="cerveja.png"  width="50"> 147 calorias
+	</p>
+	<p id="p_fast_food" hidden="true" >
+		<img src="fast_food.png" width="50">982 calorias
+	</p>
+	<p id="p_comida_chinesa" hidden="50">
+		<img src="comida_chinesa.png" draggable="true" width="50"> 254 calorias
+	</p>
+	<p id="p_cupcake" hidden="true" >
+		<img src="cupcake.png" width="30"> 164 calorias
+	</p>
+	<p id="p_queijo" hidden="true">
+		<img src="queijo.png" width="40"> 112 calorias
+	</p>
+	<p id="p_omelet" hidden="true">
+		<img src="omelet.png" width="40"> 170 calorias
+	</p>
+	<p id="p_pizza" hidden="true" >
+		<img src="fatia_pizza.png" width="50" > 412 calorias
+	</p>
+	<p id="p_misto" hidden="true">
+		<img src="misto-quente.png" width="50"> 283 calorias
+	</p>
+	<p id="p_cenoura"  hidden="true">
+		<img src="cenoura.png" width="40"> 45 Calorias
+	</p>
+	<p id="p_leite" hidden="true">
+		<img  src="leite.png" width="35"> 150 calorias
+	</p>
+	<p id="p_uva" hidden="true">
+		<img src="uva.png" width="35" alt="130"> 130 calorias
+	</p>
+	<p id="p_maca"  hidden="true">
+		<img src="maca.png" width="35" alt="85"> 85 calorias
+	</p>
+	<p id="p_milk"  hidden="true">
+		<img id="milk" src="milk-shake-chocolate.png" width="75" > 380 calorias
+	</p>
+	<p id="p_camarao"  hidden="true">
+		<img src="camarao.png" width="40"> 310 calorias
+	</p>
+
+</div>
+</body>
+</html>
